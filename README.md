@@ -1,3 +1,5 @@
+# Poster
+![Poster](https://github.com/Hufamily/DropletMicroscope/blob/146b1db23eb04ace3a5563ec25cb8d8b0c32257f/information/poster.jpg)
 # Raytracing
 Take a photo of the side profile of a water droplet. Make sure you get some form of reference inside to convert from pixels to meters later.
 ## Using DropCurve to select points to approximate surface function
