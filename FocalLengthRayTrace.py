@@ -23,7 +23,7 @@ Endpoints = np.array([174.96580789907276, 215.06403770408016])*M
 
 pDiameter = max(Endpoints)-min(Endpoints)
 if Endpoints[0] < b-c:
-    Endpoints[0] = b-c
+    Endpoints[0] = b-c+1
 if Endpoints[1] > b+c:
     Endpoints[1] = b+c
 def ellipse(x, a, b, c, d):
@@ -189,7 +189,7 @@ ax.set_xlim(96.725701978632106, 294.7747946786321)
 ax.set_ylim(100,300)
 #ax.indicate_inset_zoom(abracadabra, edgecolor="black")
 #ax.indicate_inset_zoom(alakazam, edgecolor="black")
-
+"""
 #MagnificationDataReader
 plt.close('all')
 data = np.genfromtxt('Result1.csv', delimiter = ',')
@@ -273,4 +273,4 @@ plt.legend()
 plt.ylabel('Magnification')
 plt.xlabel('Distance (px)')
 plt.yscale('log')
-#"""
+"""
