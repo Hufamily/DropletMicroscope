@@ -96,4 +96,4 @@ Ratio of diameter of aperature to diameter of droplet
 # Magnification Data
 Using ImageJ, use the particle selection function to get the horizontal and vertical box sizes, along with the point coordinates.
 Use MagnificationDataReader to view results and calculate magnification.
-Uncomment the Magnification vs Distance segment of FocalLengthRayTrace to compare the computed magnifications with the experimental data.
+Uncomment the MagnificationDataReader segment at the bottom of FocalLengthRayTrace to compare the predicted magnifications with the experimental data.
