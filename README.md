@@ -1,4 +1,5 @@
-# Poster
+# Information
+More details about this project can be found in a more detailed paper at information/paper.pdf
 ![Poster](https://github.com/Hufamily/DropletMicroscope/blob/146b1db23eb04ace3a5563ec25cb8d8b0c32257f/information/poster.jpg)
 # Raytracing
 Take a photo of the side profile of a water droplet. Make sure you get some form of reference inside to convert from pixels to meters later. It is recommended to use an IDE like SPYDER in order to see variables in case of run errors. Additionally, numpy, scipy and matplotlib is needed.
