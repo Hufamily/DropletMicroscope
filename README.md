@@ -10,40 +10,40 @@ conda install anaconda::scipy
 conda install anaconda::numpy
 ```
 
-![Droplet]()
+![Droplet](https://github.com/Hufamily/DropletMicroscope/blob/1ed29d90079dfc0010c20b2ab996e2caa6ab8d77/images/Side1.png)
 
 ## Using DropCurve to select points to approximate surface function
 Input the photo into the DropCurve program.
 You should now see a window with the horizontal derivative of the image. Adjust the window to better view the droplet.
 
-![Horizontal Derivative]()
+![Horizontal Derivative](https://github.com/Hufamily/DropletMicroscope/blob/1ed29d90079dfc0010c20b2ab996e2caa6ab8d77/images/HorizontalDerivative.png)
 
 
 ### Selecting Endpoints
 Select endpoints of droplet using cursor. Endpoints should be the points where the droplet contacts the glass, assuming a contact angle less than or equal to 90 degrees. Use m to delete previous point.
 
-![Endpoints]()
+![Endpoints](https://github.com/Hufamily/DropletMicroscope/blob/1ed29d90079dfc0010c20b2ab996e2caa6ab8d77/images/Endpoints.png)
 
 Press enter once done selecting endpoints.
 
 ### Marking top boundary
 Select points used to approximate top parabola to cut off noise above.
 
-![Top]()
+![Top](https://github.com/Hufamily/DropletMicroscope/blob/1ed29d90079dfc0010c20b2ab996e2caa6ab8d77/images/Top.png)
 
 Press m to delete last selection, and enter once done.
 
 ### Marking bottom boundary
 Select points used to approximate bottom parabola to cut off noise below.
 
-![Bot]()
+![Bot](https://github.com/Hufamily/DropletMicroscope/blob/1ed29d90079dfc0010c20b2ab996e2caa6ab8d77/images/Bottom.png)
 
 Press m to delete last selection, and enter once done.
 
 ### Taking points
 The program will output the points where the horizontal derivative is greater in magnitude than the threshold value between the two parabolas. Depending on the parabolas created, you may need to adjust how many points you place, or the function you use to fit the boundaries.
 
-![Boundaries]()
+![Boundaries](https://github.com/Hufamily/DropletMicroscope/blob/1ed29d90079dfc0010c20b2ab996e2caa6ab8d77/images/RegionSelection.png)
 
 Here, I would redo the curve selection by adding in more points on the left and right sides of the droplet surface, where the top boundary removes some of the points expected. You can also visualize any outlier points in the fit tester programs.
 
@@ -69,7 +69,7 @@ Apointx, Apointy, and the Endpoints are the two arrays of points you will input 
 Input the points outputted by the DropCurve program into sphericalFitTester or fitTester into apointx, apointy, and endpoints. Adjust window.
 Remove or add in additional filtering as necessary. I have examples of how to filter out points greater or less than a y value, along with points that are above a vertical line. Change initial guessing values, p0, as necessary in op.curve_fit().
 
-![Spherical Fit Test]()
+![Spherical Fit Test](https://github.com/Hufamily/DropletMicroscope/blob/1ed29d90079dfc0010c20b2ab996e2caa6ab8d77/images/FitTester.png)
 
 A radius to endpoint distance ratio will be outputted in sphericalFitTester, for calculating the radius of the droplet. If you change the function from a circle, you should adjust the printed parameters.
 
@@ -80,9 +80,19 @@ print("y coordinate of midpoint: "+str(d))
 print("radius: "+str(c))
 ```
 
-## Using RayTraceThreeFocalLength to generate raytrace from a "infinitely" distant point
-Input function parameters into RayTraceThreeFocalLength, adjusting window and scaling parameters as necessary.
+## Using FocalLengthRayTrace to generate raytrace from a "infinitely" distant point
+Input function parameters into FocalLengthRayTrace, adjusting window and scaling parameters as necessary.
+
+![Ray Trace](https://github.com/Hufamily/DropletMicroscope/blob/92aa6df19170d460c52fff6b49a728616f1762c3/images/RayTrace.png)
+
+Output:
+```
+Max focal length
+Min focal length
+Ratio of diameter of aperature to diameter of droplet
+```
 
 # Magnification Data
 Using ImageJ, use the particle selection function to get the horizontal and vertical box sizes, along with the point coordinates.
 Use MagnificationDataReader to view results and calculate magnification.
+Uncomment the Magnification vs Distance segment of FocalLengthRayTrace to compare the computed magnifications with the experimental data.
